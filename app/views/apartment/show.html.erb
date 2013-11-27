@@ -6,14 +6,13 @@
           <h1><%= link_to "Corcoran Real Estate", "index" %></h1>
         </div>
       <div class="span6">
-          <h4><%= link_to "For Sale", "show" %>   For Rent   New Developments </h4>
+          <h4><%= link_to "For Sale", "list" %>   For Rent   New Developments </h4>
         </div>
     </header>
 
     <!-- row 2 -->
-  <% @info.each do |apt| %>
-    <h1><%= apt.address %></h1>
-    <h4><%= apt.neighborhood %></h4>
+    <h1><%= @apt.address %></h1>
+    <h4><%= @apt.neighborhood %></h4>
   <div id="carousel">
     <ul>
       <li><img src="/assets/s1.png" width="1500"></li>
@@ -32,31 +31,31 @@
     <table id="vertical">
       <tr>
         <th>Price</th>
-        <td><%= number_to_currency(apt.price, precision: 0) %></td>
+        <td><%= number_to_currency(@apt.price, precision: 0) %></td>
       </tr>
       <tr>
         <th>Common Charges</th>
-        <td><%= number_to_currency(apt.common_charges, precision: 0) %></td>
+        <td><%= number_to_currency(@apt.common_charges, precision: 0) %></td>
       </tr>
       <tr>
         <th>Taxes</th>
-        <td><%= number_to_currency(apt.taxes, precision: 0) %></td>
+        <td><%= number_to_currency(@apt.taxes, precision: 0) %></td>
       </tr>
       <tr>
         <th>Deposit</th>
-        <td><%= number_to_percentage(apt.deposit, precision: 2) %></td>
+        <td><%= number_to_percentage(@apt.deposit, precision: 2) %></td>
       </tr>
       <tr>
         <th>Property Type</th>
-        <td><%= apt.property_type %></td>
+        <td><%= @apt.property_type %></td>
       </tr>
       <tr>
         <th>Bedrooms</th>
-        <td><%= apt.bedrooms %></td>
+        <td><%= @apt.bedrooms %></td>
       </tr>
       <tr>
         <th>Bathrooms</th>
-        <td><%= apt.bathrooms %></td>
+        <td><%= @apt.bathrooms %></td>
       </tr>
     </table>
   </div>
@@ -65,25 +64,25 @@
   <h3>Features</h3>
     <table id="vertical">
       <tr>
-        <td><%= apt.feature1 %></td>
+        <td><%= @apt.feature1 %></td>
       </tr>
       <tr>
-        <td><%= apt.feature2 %></td>
+        <td><%= @apt.feature2 %></td>
       </tr>
       <tr>
-        <td><%= apt.feature3 %></td>
+        <td><%= @apt.feature3 %></td>
       </tr>
       <tr>
-        <td><%= apt.feature4 %></td>
+        <td><%= @apt.feature4 %></td>
       </tr>
       <tr>
-        <td><%= apt.feature5 %></td>
+        <td><%= @apt.feature5 %></td>
       </tr>
       <tr>
-        <td><%= apt.feature6 %></td>
+        <td><%= @apt.feature6 %></td>
       </tr>
       <tr>
-        <td><%= apt.feature7 %></td>
+        <td><%= @apt.feature7 %></td>
       </tr>
     </table>
   </div>
@@ -92,25 +91,25 @@
   <h3>Agents</h3>
     <table id="vertical">
       <tr>
-        <td><%= apt.feature1 %></td>
+        <td><%= @apt.feature1 %></td>
       </tr>
       <tr>
-        <td><%= apt.feature2 %></td>
+        <td><%= @apt.feature2 %></td>
       </tr>
       <tr>
-        <td><%= apt.feature3 %></td>
+        <td><%= @apt.feature3 %></td>
       </tr>
       <tr>
-        <td><%= apt.feature4 %></td>
+        <td><%= @apt.feature4 %></td>
       </tr>
       <tr>
-        <td><%= apt.feature5 %></td>
+        <td><%= @apt.feature5 %></td>
       </tr>
       <tr>
-        <td><%= apt.feature6 %></td>
+        <td><%= @apt.feature6 %></td>
       </tr>
       <tr>
-        <td><%= apt.feature7 %></td>
+        <td><%= @apt.feature7 %></td>
       </tr>
     </table>
   </div>
@@ -119,11 +118,14 @@
 <!-- row 4 -->
 <div class="row">
   <h3>Description</h3>
-  <p><%= apt.description %></p>
+  <p><%= @apt.description %></p>
 
 </div>
 
-  <% end %>
+
+
+
+
 
 
 </div>

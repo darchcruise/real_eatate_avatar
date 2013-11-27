@@ -1,18 +1,21 @@
 Nov26::Application.routes.draw do
    root :to => 'apartment#show'
 
+   match "list", :to => "apartment#list"
+   match "index", :to => "apartment#index"
+   match "show", :to => "apartment#show"
 
-  get "apartment/list"
+  # get "apartment/list"
 
-  get "apartment/index"
+  # get "apartment/index"
 
-  get "apartment/show"
+  # get "apartment/show"
 
-  get "agent/list"
+  # get "agent/list"
 
-  get "agent/index"
+  # get "agent/index"
 
-  get "agent/show"
+  # get "agent/show"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -69,5 +72,5 @@ Nov26::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id))(.:format)'
+  match ':controller(/:action(/:id))(.:format)'
 end

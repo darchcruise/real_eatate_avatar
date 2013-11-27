@@ -1,4 +1,26 @@
-<h1>Apartment#list</h1>
-<p>Find me in app/views/apartment/list.html.erb</p>
+<div class="container">
+    <!-- row 1 -->
+    <header class="row">
+      <div class="span6">
+          <h1><%= link_to "Corcoran Real Estate", "index" %></h1>
+        </div>
+      <div class="span6">
+          <h4><%= link_to "For Sale", "list" %>   For Rent   New Developments </h4>
+        </div>
+    </header>
 
+    <!-- row 2 -->
+<h1>Apartment for Sale</h1>
 
+<table>
+  <tr>
+    <th>Address</th>
+    <th>Price</th>
+  </tr>
+<% @apartments.each do |apartment| %>
+  <tr>
+    <td><%= link_to (apartment.address), {:action => 'show', :id => apartment.id} %></td>
+    <td><%= apartment.price %></td>
+    <% end %>
+  </tr>
+</table>
