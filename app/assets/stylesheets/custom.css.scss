@@ -1,0 +1,23 @@
+@import "bootstrap";
+
+/* js carousel */
+#carousel {
+  width: 1000px;
+  overflow: hidden;
+}
+
+#carousel ul {
+  width: 5000px;
+}
+
+#carousel ul li {
+  width: 1000px;
+  float: left;
+  list-style: none;
+}
+
+/* essentials table */
+#vertical th {
+  text-align: left;
+  padding-right: 30px;
+}

@@ -1,0 +1,93 @@
+
+<div class="container">
+  <% @info.each do |apt| %>
+    <h1><%= apt.address %></h1>
+    <h4><%= apt.neighborhood %></h4>
+  <div id="carousel">
+    <ul>
+      <li><img src="/assets/s1.png" width="1500"></li>
+      <li><img src="/assets/s2.png" width="1500"></li>
+      <li><img src="/assets/s3.png" width="1500"></li>
+    </ul>
+  </div>
+
+<!-- Row 1 -->
+
+
+
+<div class="row">
+  <div class="span6">
+  <h3>Essentials</h3>
+    <table id="vertical">
+      <tr>
+        <th>Price</th>
+        <td><%= number_to_currency(apt.price, precision: 0) %></td>
+      </tr>
+      <tr>
+        <th>Common Charges</th>
+        <td><%= number_to_currency(apt.common_charges, precision: 0) %></td>
+      </tr>
+      <tr>
+        <th>Taxes</th>
+        <td><%= number_to_currency(apt.taxes, precision: 0) %></td>
+      </tr>
+      <tr>
+        <th>Deposit</th>
+        <td><%= number_to_percentage(apt.deposit, precision: 2) %></td>
+      </tr>
+      <tr>
+        <th>Property Type</th>
+        <td><%= apt.property_type %></td>
+      </tr>
+      <tr>
+        <th>Bedrooms</th>
+        <td><%= apt.bedrooms %></td>
+      </tr>
+      <tr>
+        <th>Bathrooms</th>
+        <td><%= apt.bathrooms %></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="span6">
+  <h3>Features</h3>
+    <table id="vertical">
+      <tr>
+        <td><%= apt.feature1 %></td>
+      </tr>
+      <tr>
+        <td><%= apt.feature2 %></td>
+      </tr>
+      <tr>
+        <td><%= apt.feature3 %></td>
+      </tr>
+      <tr>
+        <td><%= apt.feature4 %></td>
+      </tr>
+      <tr>
+        <td><%= apt.feature5 %></td>
+      </tr>
+      <tr>
+        <td><%= apt.feature6 %></td>
+      </tr>
+      <tr>
+        <td><%= apt.feature7 %></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div class="row">
+  <h3>Description</h3>
+  <p><%= apt.description %></p>
+
+</div>
+
+  <% end %>
+
+
+</div>
+
+
+
