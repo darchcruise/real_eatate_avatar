@@ -1,9 +1,10 @@
 Nov26::Application.routes.draw do
-   root :to => 'apartment#show'
+   root :to => 'apartment#index'
 
    match "list", :to => "apartment#list"
    match "index", :to => "apartment#index"
    match "show", :to => "apartment#show"
+   match "new", :to => "apartment#new"
 
   # get "apartment/list"
 
