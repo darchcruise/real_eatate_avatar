@@ -1,11 +1,21 @@
 Nov26::Application.routes.draw do
+
+  resources :sessions, :only => [:new, :create, :destroy]
+  match '/login' => 'sessions#new'
+
+
+  resources :users
+  match '/register' => 'users#new'
+
+
    root :to => 'apartment#index'
 
    match "list", :to => "apartment#list"
    match "index", :to => "apartment#index"
    match "show", :to => "apartment#show"
    match "new", :to => "apartment#new"
-
+   match "edit", :to => "apartment#edit"
+   match "destroy", :to => "apartment#destroy"
   # get "apartment/list"
 
   # get "apartment/index"
