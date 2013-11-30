@@ -1,0 +1,32 @@
+<%= link_to "Log out", logout_path %>
+
+    <!-- row 1 -->
+    <header class="row">
+      <div class="span6">
+          <h1><%= link_to "Corcoran Real Estate", "index" %></h1>
+        </div>
+      <div class="span6">
+          <h4><%= link_to "For Sale", "list" %>   For Rent   New Developments </h4>
+        </div>
+    </header>
+
+    <!-- row 2 -->
+<h1>Apartment for Sale</h1>
+
+<table>
+  <tr>
+    <th>Address</th>
+    <th>Price</th>
+  </tr>
+<% @apartments.each do |apartment| %>
+  <tr>
+    <td><%= link_to (apartment.address), {:action => 'show', :id => apartment.id} %></td>
+    <td><%= apartment.price %></td>
+    <td><%= link_to 'Edit', {:action =>'edit', :id => apartment.id} %><td>
+    <td><%= link_to 'Delete', {:action => 'destroy', :id => apartment.id} %></td>
+    <% end %>
+  </tr>
+</table>
+
+<br/>
+<%= link_to 'Create new listing', 'new' %>

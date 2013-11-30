@@ -1,32 +1,44 @@
 Nov26::Application.routes.draw do
 
+  # resources :properties
+  root :to => 'properties#index'
+
+   match "list", :to => "properties#list"
+   match "index", :to => "properties#index"
+   match "show", :to => "properties#show"
+   match "new", :to => "properties#new"
+   match "edit", :to => "properties#edit"
+   match "destroy", :to => "properties#destroy"
+   match "sale", :to => "properties#sale"
+
+  # get "properties/index"
+
+  # get "properties/show"
+
+  # get "properties/list"
+
+  # get "properties/new"
+
+  # get "properties/edit"
+
   resources :sessions, :only => [:new, :create, :destroy]
   match '/login' => 'sessions#new'
+  match '/logout' => 'sessions#destroy'
 
 
   resources :users
   match '/register' => 'users#new'
 
+   resources :apartments
+   # root :to => 'apartment#index'
 
-   root :to => 'apartment#index'
+   # match "list", :to => "apartment#list"
+   # match "index", :to => "apartment#index"
+   # match "show", :to => "apartment#show"
+   # match "new", :to => "apartment#new"
+   # match "edit", :to => "apartment#edit"
+   # match "destroy", :to => "apartment#destroy"
 
-   match "list", :to => "apartment#list"
-   match "index", :to => "apartment#index"
-   match "show", :to => "apartment#show"
-   match "new", :to => "apartment#new"
-   match "edit", :to => "apartment#edit"
-   match "destroy", :to => "apartment#destroy"
-  # get "apartment/list"
-
-  # get "apartment/index"
-
-  # get "apartment/show"
-
-  # get "agent/list"
-
-  # get "agent/index"
-
-  # get "agent/show"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

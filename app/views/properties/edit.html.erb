@@ -1,0 +1,64 @@
+<h1>Edit Listing</h1>
+
+  <%= form_for(:property, :url => {:action => 'update', :id => @property.id}, :html => {:multipart => true}) do |f| %>
+    <%= f.file_field :avatar %>
+
+   <table>
+    <tr>
+      <th>Agent_ID</th>
+      <td><%= f.text_field(:agent_id) %></td>
+    </tr>
+    <tr>
+      <th>Address</th>
+      <td><%= f.text_field(:address) %></td>
+    </tr>
+    <tr>
+      <th>Neighborhood</th>
+      <td><%= f.text_field(:neighborhood) %></td>
+    </tr>
+    <tr>
+      <th>Price</th>
+      <td><%= f.text_field(:price) %></td>
+    </tr>
+    <tr>
+      <th>Maintenance/Common Charges</th>
+      <td><%= f.text_field(:common_charges) %></td>
+    </tr>
+    <tr>
+      <th>Taxes</th>
+      <td><%= f.text_field(:taxes) %></td>
+    </tr>
+    <tr>
+      <th>Deposit</th>
+      <td><%= f.text_field(:deposit) %></td>
+    </tr>
+    <tr>
+      <th>Property Type</th>
+      <td><%= f.text_field(:property_type) %></td>
+    </tr>
+    <tr>
+      <th>Bedrooms</th>
+      <td><%= f.text_field(:bedrooms) %></td>
+    </tr>
+    <tr>
+      <th>Bathrooms</th>
+      <td><%= f.text_field(:bathrooms) %></td>
+    </tr>
+    <tr>
+      <th>Feature 1</th>
+      <td><%= f.text_field(:feature1) %></td>
+    </tr>
+    <tr>
+      <th>Feature 2</th>
+      <td><%= f.text_field(:feature2) %></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td><%= f.text_field(:description) %></td>
+    </tr>
+  </table>
+
+    <%= submit_tag("Update Listing") %>
+    <%= link_to 'Return to list', 'list' %>
+
+ <% end %>

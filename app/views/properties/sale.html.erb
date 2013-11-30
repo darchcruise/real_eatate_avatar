@@ -1,0 +1,27 @@
+    <!-- row 1 -->
+    <header class="row">
+      <div class="span6">
+          <h1><%= link_to "Corcoran Real Estate", "index" %></h1>
+        </div>
+      <div class="span6">
+          <h4><%= link_to "For Sale", "sale" %>   For Rent   New Developments </h4>
+        </div>
+    </header>
+
+    <!-- row 2 -->
+<h1>Properties for Sale</h1>
+
+<table class="table">
+  <tr>
+    <th>Address</th>
+    <th>Price</th>
+  </tr>
+<% @properties.each do |property| %>
+  <tr>
+    <td><%= link_to (property.address), {:action => 'show', :id => property.id} %></td>
+    <td><%= number_to_currency(property.price, precision: 0) %></td>
+    <% end %>
+  </tr>
+</table>
+
+<br/>

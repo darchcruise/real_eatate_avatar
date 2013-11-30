@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
+  before_filter :check_login, :only => [:index]
+
+
   def index
+    render 'list'
   end
 
   def show
@@ -15,7 +19,7 @@ class UsersController < ApplicationController
       flash[:alert] = "Congratulations! You have successfully registered."
         redirect_to @user
     else
-       flash[:alert] = @user.errors.full_messages
+       flash[:notice] = @user.errors.full_messages
         render 'new'
     end
   end

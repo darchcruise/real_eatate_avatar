@@ -1,0 +1,14 @@
+  <h1>Create New Listing</h1>
+
+  <%= form_for(:apartment, :url => {:action => 'create'}, :html => {:multipart => true}) do |f| %>
+    <%= f.file_field :avatar %>
+
+    <%= render(:partial => 'form', :locals => {:f => f}) %>
+
+    <%= submit_tag("Create Listing") %>
+    <%= link_to 'Return to list', 'list' %>
+
+
+
+  <% end %>
+

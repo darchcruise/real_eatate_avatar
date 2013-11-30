@@ -1,0 +1,129 @@
+
+<div class="container">
+    <!-- row 1 -->
+    <header class="row">
+      <div class="span6">
+          <h1><%= link_to "Acme Real Estate", "index" %></h1>
+        </div>
+      <div class="span6">
+          <h4><%= link_to "For Sale", "sale" %>   For Rent   New Developments </h4>
+        </div>
+    </header>
+
+    <!-- row 2 -->
+    <h1><%= @property.address %></h1>
+    <h4><%= @property.neighborhood %></h4>
+  <div id="carousel">
+    <ul>
+      <li><%= image_tag @property.avatar.url %></li>
+      <!-- <li><img src="/assets/s1.png" width="1500"></li>
+      <li><img src="/assets/s2.png" width="1500"></li>
+      <li><img src="/assets/s3.png" width="1500"></li> -->
+    </ul>
+  </div>
+
+
+
+
+<!-- row 3 -->
+<div class="row">
+  <div class="span4">
+  <h3>Essentials</h3>
+    <table id="vertical">
+      <tr>
+        <th>Price</th>
+        <td><%= number_to_currency(@property.price, precision: 0) %></td>
+      </tr>
+      <tr>
+        <th>Common Charges</th>
+        <td><%= number_to_currency(@property.common_charges, precision: 0) %></td>
+      </tr>
+      <tr>
+        <th>Taxes</th>
+        <td><%= number_to_currency(@property.taxes, precision: 0) %></td>
+      </tr>
+      <tr>
+        <th>Deposit</th>
+        <td><%= number_to_percentage(@property.deposit, precision: 2) %></td>
+      </tr>
+      <tr>
+        <th>Property Type</th>
+        <td><%= @property.property_type %></td>
+      </tr>
+      <tr>
+        <th>Bedrooms</th>
+        <td><%= @property.bedrooms %></td>
+      </tr>
+      <tr>
+        <th>Bathrooms</th>
+        <td><%= @property.bathrooms %></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="span4">
+  <h3>Features</h3>
+    <table id="vertical">
+      <tr>
+        <td><%= @property.feature1 %></td>
+      </tr>
+      <tr>
+        <td><%= @property.feature2 %></td>
+      </tr>
+      <tr>
+        <td><%= @property.feature3 %></td>
+      </tr>
+      <tr>
+        <td><%= @property.feature4 %></td>
+      </tr>
+      <tr>
+        <td><%= @property.feature5 %></td>
+      </tr>
+      <tr>
+        <td><%= @property.feature6 %></td>
+      </tr>
+      <tr>
+        <td><%= @property.feature7 %></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="span4">
+  <h3>Agents</h3>
+    <table id="vertical">
+      <tr>
+        <td><%= @property.feature1 %></td>
+      </tr>
+      <tr>
+        <td><%= @property.feature2 %></td>
+      </tr>
+      <tr>
+        <td><%= @property.feature3 %></td>
+      </tr>
+      <tr>
+        <td><%= @property.feature4 %></td>
+      </tr>
+      <tr>
+        <td><%= @property.feature5 %></td>
+      </tr>
+      <tr>
+        <td><%= @property.feature6 %></td>
+      </tr>
+      <tr>
+        <td><%= @property.feature7 %></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+  <!-- row 4 -->
+  <div class="row">
+    <h3>Description</h3>
+    <p><%= @property.description %></p>
+
+  </div>
+
+</div>
+
+
+
