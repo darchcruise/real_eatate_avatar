@@ -1,3 +1,5 @@
+<%= link_to "Log out", logout_path %>
+
     <!-- row 1 -->
     <header class="row">
       <div class="span6">
@@ -9,19 +11,15 @@
     </header>
 
     <!-- row 2 -->
-<h1>Properties for Sale</h1>
+<h1>Agents</h1>
 
-<table class="table">
+<table>
   <tr>
     <th>Address</th>
     <th>Price</th>
   </tr>
-<% @properties.each do |property| %>
-  <tr>
-    <td><%= link_to (property.address), {:action => 'show', :id => property.id} %></td>
-    <td><%= number_to_currency(property.price, precision: 0) %></td>
-    <% end %>
-  </tr>
-</table>
+<% @agents.all %>
+
 
 <br/>
+<%= link_to 'Create new agent', 'new' %>

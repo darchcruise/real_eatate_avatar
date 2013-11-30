@@ -1,0 +1,22 @@
+<%= link_to "Log out", logout_path %>
+
+    <!-- row 1 -->
+    <header class="row">
+      <div class="span6">
+          <h1><%= link_to "Acme Real Estate", "index" %></h1>
+        </div>
+      <div class="span6">
+          <h4><%= link_to "For Sale", "sale" %>   For Rent   New Developments </h4>
+        </div>
+    </header>
+
+    <!-- row 2 -->
+<h1>Agents</h1>
+
+<% @agents.each do |x| %>
+<%= x.name %>
+<% end %>
+
+
+<br/>
+<%= link_to 'Create new agent', 'new' %>

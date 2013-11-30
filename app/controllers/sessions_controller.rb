@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       )
     if user
       flash[:notice] = 'You are now logged in'
-      redirect_to '/users/index'
+      redirect_to(:controller => 'properties', :action => 'list')
     else
       flash[:notice] = 'Invalid username and password'
       redirect_to login_path

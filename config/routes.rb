@@ -1,5 +1,7 @@
 Nov26::Application.routes.draw do
 
+  resources :agents
+
   # resources :properties
   root :to => 'properties#index'
 
@@ -11,25 +13,15 @@ Nov26::Application.routes.draw do
    match "destroy", :to => "properties#destroy"
    match "sale", :to => "properties#sale"
 
-  # get "properties/index"
-
-  # get "properties/show"
-
-  # get "properties/list"
-
-  # get "properties/new"
-
-  # get "properties/edit"
-
   resources :sessions, :only => [:new, :create, :destroy]
   match '/login' => 'sessions#new'
   match '/logout' => 'sessions#destroy'
 
-
   resources :users
   match '/register' => 'users#new'
+  match '/users/index' => 'users#index'
 
-   resources :apartments
+   # resources :apartments
    # root :to => 'apartment#index'
 
    # match "list", :to => "apartment#list"
