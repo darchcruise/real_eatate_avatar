@@ -1,5 +1,7 @@
 Nov26::Application.routes.draw do
 
+  resources :locations
+
   resources :agents
 
   # resources :properties

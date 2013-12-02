@@ -16,9 +16,14 @@
   list-style: none;
 }
 
-/* show page */
-#image {
-
+/* google maps */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+#map{
+  height: 100%;
+  margin: 0;
 }
 
 /* essentials table */

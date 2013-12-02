@@ -20,7 +20,9 @@ end
 gem 'jquery-rails'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'bcrypt-ruby'
-
+gem 'geocoder'
+gem 'nifty-generators', :group => :development
+gem 'mocha'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -36,3 +38,5 @@ gem 'bcrypt-ruby'
 
 # To use debugger
 # gem 'debugger'
+
+gem "mocha", :group => :test
