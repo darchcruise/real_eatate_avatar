@@ -30,10 +30,14 @@ $(document).ready(function(){
 
 
 // google map
-// var mapOptions = {
-//     center: new google.maps.LatLng(37.7831,-122.4039),
-//     zoom: 12,
-//     mapTypeId: google.maps.MapTypeId.ROADMAP
-// };
+      function initialize_map(latitude, longitude) {
+        var mapOptions = {
+          center: new google.maps.LatLng(latitude, longitude),
+          zoom: 8,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("map-canvas"),
+            mapOptions);
+      }
 
-// new google.maps.Map(document.getElementById('map'), mapOptions);
+
