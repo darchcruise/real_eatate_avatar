@@ -31,13 +31,18 @@ $(document).ready(function(){
 
 // google map
       function initialize_map(latitude, longitude) {
+
         var mapOptions = {
           center: new google.maps.LatLng(latitude, longitude),
-          zoom: 8,
+          zoom: 16,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         };
+
         var map = new google.maps.Map(document.getElementById("map-canvas"),
             mapOptions);
-      }
 
-
+        var marker = new google.maps.Marker({
+          position: new google.maps.LatLng(latitude, longitude),
+          map: map
+        });
+}

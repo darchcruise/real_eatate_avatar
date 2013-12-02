@@ -10,6 +10,7 @@ class PropertiesController < ApplicationController
 
   def show
     @property = Property.find(params[:id])
+    @result = Geocoder.search(@property.address).first
   end
 
 # the methods below are only to be used by admin, hence view page should layout admin
