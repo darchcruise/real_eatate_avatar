@@ -25,9 +25,10 @@ class User < ActiveRecord::Base
     if user && user.password == Digest::SHA1.hexdigest(password)
       user
     else
+      nil
     end
   end
-      nil
+
 end
 
 

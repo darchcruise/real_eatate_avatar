@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :check_login, :only => [:index]
+  # before_filter :check_login, :only => [:index]
 
 
   def index

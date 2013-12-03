@@ -1,5 +1,8 @@
 class PropertiesController < ApplicationController
 
+
+# before_filter :check_login, except: [:index, :sale, :show]
+
   # these are the only two methods for the public, view page layout application
   def index
   end
