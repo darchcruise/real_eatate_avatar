@@ -23,6 +23,7 @@ class PropertiesController < ApplicationController
 
   def new
     @property = Property.new
+    5.times { @property.photos.build }
   end
 
   def create
@@ -38,6 +39,7 @@ class PropertiesController < ApplicationController
 
   def edit
     @property = Property.find(params[:id])
+    5.times { @property.photos.build }
   end
 
   def update

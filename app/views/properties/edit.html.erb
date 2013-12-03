@@ -1,7 +1,13 @@
 <h1>Edit Listing</h1>
 
   <%= form_for(:property, :url => {:action => 'update', :id => @property.id}, :html => {:multipart => true}) do |f| %>
-    <%= f.file_field :avatar %>
+
+    <% @property.photos.each do |photo| %>
+
+      <%= f.fields_for :photos, photo do |f_photo| %>
+        <%= f_photo.file_field :avatar %>
+      <% end %>
+    <% end %>
 
    <table>
     <tr>

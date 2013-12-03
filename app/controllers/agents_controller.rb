@@ -1,4 +1,7 @@
 class AgentsController < ApplicationController
+
+  before_filter :check_login
+
   def index
     @agents = Agent.all
   end
