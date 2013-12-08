@@ -1,4 +1,4 @@
-if Rails.production? # (on Heroku)
+if Rails.env == 'production' # (on Heroku)
   uri = URI.parse(ENV["REDISTOGO_URL"])
   REDIS = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
 else
