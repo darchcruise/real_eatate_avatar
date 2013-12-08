@@ -21,22 +21,18 @@ gem 'jquery-rails'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'bcrypt-ruby'
 gem 'geocoder'
-gem 'nifty-generators', :group => :development
-gem 'mocha'
+gem 'redis'
+gem 'thin'
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
 
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
 
-# Use unicorn as the app server
-# gem 'unicorn'
+group :development do
+  gem 'nifty-generators'
+  gem 'quiet_assets'
+  gem 'debugger'
+end
 
-# Deploy with Capistrano
-# gem 'capistrano'
 
-# To use debugger
-# gem 'debugger'
-
-gem "mocha", :group => :test
+group :test do
+  gem "mocha"
+end

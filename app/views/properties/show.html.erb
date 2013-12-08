@@ -1,6 +1,6 @@
 
 
-    <!-- row 1 -->
+    <!-- row 1 (Header Banner)-->
     <header class="row">
       <div class="span6">
           <h1><%= link_to "Acme Real Estate", "index" %></h1>
@@ -10,38 +10,44 @@
         </div>
     </header>
 
-    <!-- row 2 -->
+
+    <!-- row 2 (Property Address and Neighborhood)-->
     <h1><%= @property.address %></h1>
     <h4><%= @property.neighborhood %></h4>
 
-    <!-- row 3 -->
+
+
+    <!-- row 3 (Photos and Google Map)-->
   <div class="row">
       <div class="span8">
-        <ul>
-          <% @property.photos.each do |x| %><
-         <li><%= image_tag(x.avatar.url) %></li>
-
-          <% end %>
-        </ul>
+        <div class="carousel-outer">
+          <a class="previouslink" href="#">Previous</a>
+            <div class="carousel-inner">
+                <ul>
+                  <% @property.photos.each do |x| %><
+                 <li class="image-shown"><%= image_tag(x.avatar.url) %></li>
+                  <% end %>
+                </ul>
+            </div>
+          <a class="nextlink" href="#">Next</a>
+        </div>
       </div>
 
-
-
-
-<div class="span4">
-        <div id="map-canvas" style="height:380px;width:300px;margin:0 auto;"></div>
+      <div class="span4">
+          <div id="map-canvas" style="height:380px;width:300px;margin:0 auto;"></div>
       </div>
   </div>
+    <% if @result.present? %>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        initialize_map(<%= @result.latitude %>, <%= @result.longitude %>);
+      });
+    </script>
+  <% end %>
 
-  <script type="text/javascript">
-    $(document).ready(function(){
-      initialize_map(<%= @result.latitude %>, <%= @result.longitude %>);
-    });
-  </script>
 
 
-
-<!-- row 4 -->
+<!-- row 4 (Features and Agent info)-->
 <div class="row">
   <div class="span4">
   <h3>Essentials</h3>
@@ -121,7 +127,7 @@
   </div>
 </div>
 
-  <!-- row 4 -->
+  <!-- row 5 (Description)-->
   <div class="row">
     <h3>Description</h3>
     <p><%= @property.description %></p>

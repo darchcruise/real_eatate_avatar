@@ -1,6 +1,6 @@
 @import "bootstrap";
 
-/* js carousel */
+/* home page carousel */
 #carousel {
   width: 800px;
   overflow: hidden;
@@ -15,6 +15,42 @@
   float: left;
   list-style: none;
 }
+
+
+
+/* show page carousel */
+.image-shown img {
+  width: 600px;
+  float: left;
+}
+
+.carousel-inner {
+  width: 800px;
+  overflow: hidden;
+}
+
+.carousel-inner ul {
+  width: 5000px;
+  }
+
+.carousel-inner li {
+  width: 800px;
+  float: left;
+  list-style: none;
+}
+
+.previouslink, .nextlink {
+}
+
+.carousel-outer {
+  width: 1500px;
+}
+
+.span8 {
+
+}
+
+
 
 /* google maps */
 

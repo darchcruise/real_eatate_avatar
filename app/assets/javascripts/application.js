@@ -18,6 +18,8 @@
 //     alert("Tom Tom");
 // });
 
+
+// home page - carousel
 $(document).ready(function(){
     // Set the interval to be 5 seconds
     var t = setInterval(function(){
@@ -26,6 +28,12 @@ $(document).ready(function(){
             $(this).css({marginLeft:0});
         });
     },5000);
+});
+
+
+// show page - carousel
+$(document).ready(function(){
+
 });
 
 
