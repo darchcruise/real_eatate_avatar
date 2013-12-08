@@ -33,7 +33,31 @@ $(document).ready(function(){
 
 // show page - carousel
 $(document).ready(function(){
+  $(".nextlink").on("click", function(e){
+      e.preventDefault();
+      var currentImage = $(".image-shown");
+      var nextImage = currentImage.next();
+      if(!nextImage) {
+        nextImage = $(".carousel-inner li").last();
+      }
+      currentImage.removeClass("image-shown").addClass("image-hidden").css("z-index", -10);
+      nextImage.addClass("image-shown").removeClass("image-hidden").css("z-index", -20);
+      $(".carousel-inner li").not(currentImage, nextImage).css("z-index", 1);
+  });
 
+
+  $(".previouslink").on("click", function(e){
+      e.preventDefault();
+      var currentImage = $(".image-shown");
+      var nextImage = currentImage.prev();
+      alert(nextImage);
+      if(!nextImage) {
+        nextImage = $(".carousel-inner li").first();
+      }
+      currentImage.removeClass("image-shown").addClass("image-hidden").css("z-index", -10);
+      nextImage.addClass("image-shown").removeClass("image-hidden").css("z-index", -20);
+      $(".carousel-inner li").not(currentImage, nextImage).css("z-index", 1);
+    });
 });
 
 

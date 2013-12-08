@@ -16,7 +16,6 @@
     <h4><%= @property.neighborhood %></h4>
 
 
-
     <!-- row 3 (Photos and Google Map)-->
   <div class="row">
       <div class="span8">
@@ -24,8 +23,12 @@
           <a class="previouslink" href="#">Previous</a>
             <div class="carousel-inner">
                 <ul>
-                  <% @property.photos.each do |x| %><
-                 <li class="image-shown"><%= image_tag(x.avatar.url) %></li>
+                  <% @property.photos.each_with_index do |x, i| %>
+                    <% if i == 0 %>
+                      <li class="image-shown"><%= image_tag(x.avatar.url) %></li>
+                    <% else %>
+                      <li class="image-hidden"><%= image_tag(x.avatar.url) %></li>
+                    <% end %>
                   <% end %>
                 </ul>
             </div>

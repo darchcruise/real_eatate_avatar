@@ -24,6 +24,10 @@
   float: left;
 }
 
+.image-hidden{
+  display:none;
+}
+
 .carousel-inner {
   width: 800px;
   overflow: hidden;
@@ -39,7 +43,8 @@
   list-style: none;
 }
 
-.previouslink, .nextlink {
+.previouslink {
+
 }
 
 .carousel-outer {
