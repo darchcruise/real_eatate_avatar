@@ -20,6 +20,10 @@ Nov26::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
+  # Don't try to connect to pg database while compiling assets.
+  # https://devcenter.heroku.com/articles/rails-asset-pipeline#troubleshooting
+  config.assets.initialize_on_precompile = false
+
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
 
