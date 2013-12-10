@@ -50,7 +50,7 @@ $(document).ready(function(){
       e.preventDefault();
       var currentImage = $(".image-shown");
       var nextImage = currentImage.prev();
-      alert(nextImage);
+
       if(!nextImage) {
         nextImage = $(".carousel-inner li").first();
       }
@@ -59,6 +59,8 @@ $(document).ready(function(){
       $(".carousel-inner li").not(currentImage, nextImage).css("z-index", 1);
     });
 });
+
+
 
 
 // google map
