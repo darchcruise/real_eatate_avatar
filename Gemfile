@@ -24,6 +24,7 @@ end
 
 gem 'jquery-rails'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+gem 'aws-sdk'
 gem 'bcrypt-ruby'
 gem 'geocoder'
 gem 'redis'

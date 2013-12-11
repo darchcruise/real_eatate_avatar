@@ -39,8 +39,13 @@ GEM
       i18n (~> 0.6, >= 0.6.4)
       multi_json (~> 1.0)
     arel (3.0.3)
+    aws-sdk (1.29.1)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
+      uuidtools (~> 2.1)
     bcrypt-ruby (3.1.1)
-    bootstrap-sass (2.1.0.0)
+    bootstrap-sass (3.0.3.0)
+      sass (~> 3.2)
     builder (3.0.4)
     climate_control (0.0.3)
       activesupport (>= 3.0)
@@ -77,10 +82,13 @@ GEM
       treetop (~> 1.4.8)
     metaclass (0.0.1)
     mime-types (1.25.1)
+    mini_portile (0.5.2)
     mocha (0.14.0)
       metaclass (~> 0.0.1)
     multi_json (1.8.2)
     nifty-generators (0.4.6)
+    nokogiri (1.6.0)
+      mini_portile (~> 0.5.0)
     pg (0.12.2)
     polyglot (0.3.3)
     quiet_assets (1.0.2)
@@ -135,11 +143,13 @@ GEM
     uglifier (2.3.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    uuidtools (2.1.4)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  aws-sdk
   bcrypt-ruby
   bootstrap-sass
   coffee-rails (~> 3.2.1)

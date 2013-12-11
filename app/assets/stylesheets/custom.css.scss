@@ -19,42 +19,16 @@
 
 
 /* show page carousel */
-.image-shown img {
-  width: 600px;
-  float: left;
+//
+
+.carousel-indicators li {
+  background-color: #999;
+  background-color: rgba(70,70,70,.25);
 }
 
-.image-hidden{
-  display:none;
+.carousel-indicators .active {
+  background-color: #444;
 }
-
-.carousel-inner {
-  width: 800px;
-  overflow: hidden;
-}
-
-.carousel-inner ul {
-  width: 5000px;
-  }
-
-.carousel-inner li {
-  width: 800px;
-  float: left;
-  list-style: none;
-}
-
-.previouslink {
-  margin-right: 500px;
-}
-
-.carousel-outer {
-  width: 1500px;
-}
-
-.span8 {
-
-}
-
 
 
 /* google maps */

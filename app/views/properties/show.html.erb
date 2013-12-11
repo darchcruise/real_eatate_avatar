@@ -1,52 +1,78 @@
+<!-- row 1 (Header Banner)-->
+<header class="row">
+  <div class="span6">
+      <h1><%= link_to "Acme Real Estate", "index" %></h1>
+  </div>
+  <div class="span6">
+      <h4><%= link_to "For Sale", "sale" %>   For Rent   New Developments </h4>
+  </div>
+</header>
 
 
-    <!-- row 1 (Header Banner)-->
-    <header class="row">
-      <div class="span6">
-          <h1><%= link_to "Acme Real Estate", "index" %></h1>
-        </div>
-      <div class="span6">
-          <h4><%= link_to "For Sale", "sale" %>   For Rent   New Developments </h4>
-        </div>
-    </header>
-
-
-    <!-- row 2 (Property Address and Neighborhood)-->
-    <h1><%= @property.address %></h1>
-    <h4><%= @property.neighborhood %></h4>
+<!-- row 2 (Property Address and Neighborhood)-->
+<h1><%= @property.address %></h1>
+<h4><%= @property.neighborhood %></h4>
 
 
     <!-- row 3 (Photos and Google Map)-->
-  <div class="row">
-      <div class="span8">
-        <div class="carousel-outer">
-            <div class="carousel-inner">
-                <ul>
-                  <% @property.photos.each_with_index do |x, i| %>
-                    <% if i == 0 %>
-                      <li class="image-shown"><%= image_tag(x.avatar.url) %></li>
-                    <% else %>
-                      <li class="image-hidden"><%= image_tag(x.avatar.url) %></li>
-                    <% end %>
-                  <% end %>
-                </ul>
-            </div>
-          <a class="previouslink" href="#">Previous</a>
-          <a class="nextlink" href="#">Next</a>
+<div class="row">
+    <div class="span8">
+
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+        <!--page indicator-->
+        <ol class="carousel-indicators">
+          <li data-target="carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="carousel-example-generic" data-slide-to="1"></li>
+          <li data-target="carousel-example-generic" data-slide-to="2"></li>
+          <li data-target="carousel-example-generic" data-slide-to="3"></li>
+          <li data-target="carousel-example-generic" data-slide-to="4"></li>
+        </ol>
+
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <% @property.photos.each do |x| %>
+          <div class="item">
+
+                <%= image_tag(x.avatar.url) %>
+
+          </div>
+          <% end %>
         </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
       </div>
 
-      <div class="span4">
-          <div id="map-canvas" style="height:380px;width:300px;margin:0 auto;"></div>
-      </div>
-  </div>
-    <% if @result.present? %>
-    <script type="text/javascript">
-      $(document).ready(function(){
-        initialize_map(<%= @result.latitude %>, <%= @result.longitude %>);
-      });
-    </script>
-  <% end %>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="span4">
+        <div id="map-canvas" style="height:380px;width:300px;margin:0 auto;"></div>
+    </div>
+</div>
+
+
+<% if @result.present? %>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      initialize_map(<%= @result.latitude %>, <%= @result.longitude %>);
+    });
+  </script>
+<% end %>
 
 
 
@@ -130,16 +156,8 @@
   </div>
 </div>
 
-  <!-- row 5 (Description)-->
-  <div class="row">
-    <h3>Description</h3>
-    <p><%= @property.description %></p>
-  </div>
-
-
-
-
-
-
-
-
+<!-- row 5 (Description)-->
+<div class="row">
+  <h3>Description</h3>
+  <p><%= @property.description %></p>
+</div>
