@@ -1,0 +1,16 @@
+<table class="table">
+<tr>
+  <th>Address</th>
+  <th>Price</th>
+</tr>
+
+
+<% @search.each do |property| %>
+<tr>
+  <td><%= property.address %></td>
+  <td><%= number_to_currency(property.price, precision: 0) %></td>
+</tr>
+<% end %>
+</table>
+
+<%= link_to "For Sale", "sale" %>

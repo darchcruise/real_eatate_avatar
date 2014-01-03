@@ -4,6 +4,8 @@
 #carousel {
   width: 800px;
   overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #carousel ul {
@@ -16,12 +18,13 @@
   list-style: none;
 }
 
-
-
 .carousel-inner {
   width: 600px;
 }
 
+.row {
+  text-align: center;
+}
 
 /* google maps */
 
@@ -43,4 +46,14 @@ body {
 #vertical th {
   text-align: left;
   padding-right: 30px;
+}
+
+/* sale page search */
+.right-alignment {
+  margin-left: 700px;
+  color: red;
+}
+
+form {
+  margin-bottom: 50px;
 }

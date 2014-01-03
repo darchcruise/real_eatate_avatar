@@ -56,4 +56,19 @@ class PropertiesController < ApplicationController
       flash[:notice] = "Successfully deleted listing"
       redirect_to(:action => 'list')
   end
+
+  def find
+    # @search = Property.find(:all, :conditions=>["price < ? OR price > ?", 5, 1])
+      @search = Property.find(:all, :conditions=>["price = ?" , 3295000])
+      # @search = Ad.find(:all, :conditions=>["price > ?", params[:search_string]])
+      puts @search[0].price
+
+  end
 end
+
+
+
+
+
+
+
